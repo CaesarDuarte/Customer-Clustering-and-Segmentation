@@ -1,0 +1,23 @@
+name: customer-segmentation
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pandas>=2.2
+  - numpy>=1.26
+  - pyarrow>=15.0
+  - openpyxl>=3.1
+  - scikit-learn>=1.4
+  - xgboost>=2.0
+  - lightgbm>=4.3
+  - sqlalchemy>=2.0
+  - psycopg2>=2.9
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - plotly>=5.20
+  - jupyter>=1.0
+  - ipykernel>=6.0
+  - hdbscan>=0.8
+  - pymc-marketing>=0.19.4
+  - pip
