@@ -44,8 +44,8 @@ def load_and_process_data() -> pd.DataFrame:
     
     file_path = RAW_DIR / "online_retail_II.xlsx"
     logger.info(f"Loading data from {file_path}")
-    df_2009_2010 = pd.read_excel(file_path, sheet_name="Year 2009-2010", dtype={"Invoice": str, "StockCode": str, "Customer ID": str, "Country": str, "Description": str, "Quantity": int, "Price": float})
-    df_2010_2011 = pd.read_excel(file_path, sheet_name="Year 2010-2011", dtype={"Invoice": str, "StockCode": str, "Customer ID": str, "Country": str, "Description": str, "Quantity": int, "Price": float})
+    df_2009_2010 = pd.read_excel(file_path, sheet_name="Year 2009-2010", dtype={"Invoice": str, "StockCode": str, "Customer ID": str, "Country": str, "Description": str, "Quantity": int, "Price": float}, engine='calamine')
+    df_2010_2011 = pd.read_excel(file_path, sheet_name="Year 2010-2011", dtype={"Invoice": str, "StockCode": str, "Customer ID": str, "Country": str, "Description": str, "Quantity": int, "Price": float}, engine='calamine')
 
     logger.info("Concatenating dataframes")
     df = pd.concat([df_2009_2010, df_2010_2011], ignore_index=True)
