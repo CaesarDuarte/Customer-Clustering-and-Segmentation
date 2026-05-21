@@ -14,6 +14,7 @@
 
 - [Business Problem](#business-problem)
 - [Objectives](#objectives)
+- [Reproducibility](#reproducibility)
 - [Dataset](#dataset)
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
@@ -25,7 +26,6 @@
 - [SQL Analytics Layer](#sql-analytics-layer)
 - [Tech Stack](#tech-stack)
 - [Key Insights](#key-insights)
-- [Reproducibility](#reproducibility)
 - [Future Improvements](#future-improvements)
 - [License](#license)
 
@@ -59,6 +59,38 @@ This project builds a complete analytical layer to answer these questions using 
 - Parquet persistence for fast downstream reads
 - Load into PostgreSQL warehouse
 - Analytical queries in pure SQL
+
+---
+
+## Reproducibility
+
+### Requirements
+- [Pixi](https://pixi.prefix.dev/latest/)
+- PostgreSQL instance (for the reporting phase)
+
+### Setup
+
+```bash
+git clone https://github.com/CaesarDuarte/Customer-Clustering-and-Segmentation
+cd Customer-Clustering-and-Segmentation
+
+pixi install
+pixi shell
+```
+
+### Download the dataset
+
+```
+Place 'online_retail_II.xlsx' in data/raw/
+Download from: https://archive.ics.uci.edu/dataset/502/online+retail+ii
+```
+
+### Run pipeline
+
+```bash
+pixi run python src/ingestion/loader.py
+pixi run python src/ingestion/validation.py
+```
 
 ---
 
@@ -257,41 +289,6 @@ ORDER BY avg_cltv DESC;
 ## Key Insights
 
 > *To be updated as the project progresses.*
-
----
-
-## Reproducibility
-
-### Requirements
-- [Miniforge](https://github.com/conda-forge/miniforge) (or any conda distribution)
-- PostgreSQL instance (for the reporting phase)
-
-### Setup
-
-```bash
-git clone https://github.com/CaesarDuarte/Customer-Clustering-and-Segmentation
-cd Customer-Clustering-and-Segmentation
-
-conda env create -f environment.yml
-conda activate customer-segmentation
-
-# Registers src/ as an editable package (enables cross-module imports)
-pip install -e .
-```
-
-### Download the dataset
-
-```
-Place 'online_retail_II.xlsx' in data/raw/
-Download from: https://archive.ics.uci.edu/dataset/502/online+retail+ii
-```
-
-### Run pipeline
-
-```bash
-python -m src.ingestion.loader
-python -m src.ingestion.validation
-```
 
 ---
 
