@@ -1,6 +1,6 @@
 # Customer Segmentation & Retention Analytics
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -168,7 +168,7 @@ Customer-Clustering-and-Segmentation/
 │   ├── churn_rate_by_segment.sql
 │   └── ltv_ranking.sql
 │
-├── environment.yml
+├── pixi.lock
 ├── pyproject.toml
 └── README.md
 ```
@@ -282,7 +282,7 @@ ORDER BY avg_cltv DESC;
 | CLTV Modeling    | PYMC-Marketing (BG/NBD + Gamma-Gamma)      |
 | Data Engineering | PostgreSQL, SQLAlchemy                     |
 | Visualization    | Matplotlib, Seaborn, Plotly                |
-| Environment      | Conda and pip (inside Pixi)                |
+| Environment      | Pixi (conda-forge + PyPI)                |
 
 ---
 
