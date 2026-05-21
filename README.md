@@ -282,7 +282,7 @@ ORDER BY avg_cltv DESC;
 | CLTV Modeling    | PYMC-Marketing (BG/NBD + Gamma-Gamma)      |
 | Data Engineering | PostgreSQL, SQLAlchemy                     |
 | Visualization    | Matplotlib, Seaborn, Plotly                |
-| Environment      | Conda (Miniforge), pip                     |
+| Environment      | Conda and pip (inside Pixi)                |
 
 ---
 
